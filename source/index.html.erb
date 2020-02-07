@@ -13,9 +13,9 @@ title: Welcome to Middleman
 </svg>
 
 <h1>
-  Middleman is Running
+  A Middleman Website
 </h1>
-
+<h2><i><small>~ deployed to Github Pages using a Github Action ~</small></i></h2>
 <h2>About</h2>
 
 <p>
@@ -28,10 +28,11 @@ using Github Actions.
 
 <p>
   <ol>
-    <li>Create a Middleman website</li>
-    <li>Add an action to build and deploy the website.</li>
-    <li>Add a deply step to this action. I used the 
-    Add a <a href="https://github.com/marketplace/actions/deploy-to-github-pages">GitHub Pages Deploy Action<a></li> step to your Github action.
+    <li>Create a Middleman website and push the sourcecode to 
+      <a href="https://serra.github.io/middleman-deploy-experiment/">a Github repository</a>.
+    </li>
+    <li>Add an <a href="https://github.com/serra/middleman-deploy-experiment/blob/master/.github/workflows/deploy.yml">action to build and deploy the website</a>.</li>
+    <li>Add a deploy step to this action. I used the <a href="https://github.com/marketplace/actions/deploy-to-github-pages">GitHub Pages Deploy Action</a> step.</li>
     <li><a href="https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line">Create a personal acces token</a>.</li>
     <li><a href="https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets">Add this personal access token as a secret to the repository</a>.</li>
     <li>Push a new commit to Github.</li>

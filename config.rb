@@ -1,3 +1,8 @@
+# Since this is a project page, it deploys to a subdirectory 
+# and we have to use relative assets:
+activate :relative_assets
+set :relative_links, true
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 

@@ -27,10 +27,7 @@ jobs:
         # Depending on the repository permissions you may need to provide 
         #  the action with a GitHub personal access token instead of the 
         #  provided GitHub token in order to deploy. This should be stored as a secret.
-        ACCESS_TOKEN: '' # optional
-        # In order for GitHub to trigger the rebuild of your page you must provide 
-        #  the action with the repositories provided GitHub token.
-        GITHUB_TOKEN: '' # optional
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         # This is the branch you wish to deploy to, for example gh-pages or docs.
         BRANCH: 'gh-pages'
         # The folder in your repository that you want to deploy. 

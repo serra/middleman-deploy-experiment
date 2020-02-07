@@ -1,0 +1,40 @@
+name: deploy
+
+on: 
+  push:
+    branches:
+    - 'master'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check Ruby Versions
+      run: ls $RUNNER_TOOL_CACHE/Ruby
+    - uses: actions/checkout@v1
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.5'
+    - name: Bootstrap
+      run: make bootstrap
+    - name: Build
+      run: make test
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@3.2.1
+      with:
+        # Depending on the repository permissions you may need to provide 
+        #  the action with a GitHub personal access token instead of the 
+        #  provided GitHub token in order to deploy. This should be stored as a secret.
+        ACCESS_TOKEN: '' # optional
+        # In order for GitHub to trigger the rebuild of your page you must provide 
+        #  the action with the repositories provided GitHub token.
+        GITHUB_TOKEN: '' # optional
+        # This is the branch you wish to deploy to, for example gh-pages or docs.
+        BRANCH: 'gh-pages'
+        # The folder in your repository that you want to deploy. 
+        #  If your build script compiles into a directory named build you would put it here. 
+        #  Folder paths cannot have a leading / or ./. 
+        #  If you wish to deploy the root directory you can place a . here.
+        FOLDER: 'build'
